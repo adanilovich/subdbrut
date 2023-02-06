@@ -1,0 +1,38 @@
+# subdbrut
+
+subdbrut is async and multithreaded subdomain brutforcer based on epoll, so unfortunately it works only on linux.
+It distributes highload between dns resolvers and can demonstrate ~60k rps. 
+
+
+## Install
+
+subdbrut is written in pure C without any libs. 
+
+```
+▶ git clone github.com/adanilovich/subdbrut
+▶ make build
+▶ ./subdbrut -h
+```
+
+## Detailed Usage
+
+```
+▶ ./subdbrut -h
+[ ./subdbrut ] Aggressive subdomain brutforcer
+
+Options:
+  -r        Requests per second. Default = 1
+  -i        Timeout is how long will be your connection. Default = 3
+  -d        File contained dns resolvers list. Default = dns_resolvers.txt
+  -t        Amount of threads, that equals cores number. Default = 3
+
+Example:
+cat subdomains_list.txt | ./subdbrut -r 1000 -i 3 -d dns_resolvers.txt
+```
+
+```
+doc.google.com
+email.google.com
+abc.google.com
+...
+```

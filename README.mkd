@@ -31,6 +31,8 @@ cat subdomains_list.txt | ./subdbrut -r 1000 -i 3 -d dns_resolvers.txt
 ```
 
 ```
+subdomains_list.txt
+-------------------
 doc.google.com
 email.google.com
 abc.google.com
